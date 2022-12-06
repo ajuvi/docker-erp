@@ -20,3 +20,4 @@ docker run -t -d ^
 	-e PMA_HOST=db ^
 	-p 8081:80 ^
 	phpmyadmin/phpmyadmin:latest
+ 
