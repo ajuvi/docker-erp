@@ -1,12 +1,12 @@
 rem elimina el contenidor web i la imatge
-docker stop erp1
-docker container rm erp1
+docker stop erp
+docker container rm erp
 docker image rm erp-image
 
 rem elimina el contenidor de mysql
-docker stop db1
-docker container rm db1
+docker stop db
+docker container rm db
 
 rem elimina el contenidor de phpmyadmin
-docker stop phpmyadmin1
-docker container rm phpmyadmin1
+docker stop phpmyadmin
+docker container rm phpmyadmin
