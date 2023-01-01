@@ -4,6 +4,18 @@
 ```
 docker-compose up -d
 ```
+## Accedir als contenidor
+
+Accedir al contenidor www
+```
+docker exec -ti www bash
+```
+
+## Accedir des del navegador
+```
+localhost:80 -> www
+localhost:8000 -> phpmyadmin
+```
 
 ## Eliminar els contenidors
 ```
@@ -26,7 +38,3 @@ Iniciar els contenidors
 ```
 docker-compose start
 ```
-
-## Accedir a un contenidor
-
-Docker 

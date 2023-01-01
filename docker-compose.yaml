@@ -21,8 +21,6 @@ services:
             MYSQL_PASSWORD: 12345
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
-            - ./conf:/etc/mysql/conf.d
-            - ./apache2:/etc/apache2
             - persistent:/var/lib/mysql
         ports: 
             - "3306:3306"
