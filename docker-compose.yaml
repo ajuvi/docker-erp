@@ -1,0 +1,44 @@
+version: "2.6"
+services:
+    www:
+        build: .
+        container_name: www
+        ports: 
+            - "80:80"
+        volumes:
+            - ./www:/var/www/html
+        links:
+            - db
+        networks:
+            - default
+    db:
+        image: mysql:5.7
+        container_name: db
+        environment:
+            MYSQL_ROOT_PASSWORD: 12345
+            MYSQL_DATABASE: demo
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: 12345
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
+            - ./conf:/etc/mysql/conf.d
+            - ./apache2:/etc/apache2
+            - persistent:/var/lib/mysql
+        ports: 
+            - "3306:3306"
+        networks:
+            - default
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: pma
+        links:
+            - db:db
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+        restart: always
+        ports:
+            - 8000:80
+volumes:
+    persistent:
