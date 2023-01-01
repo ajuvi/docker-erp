@@ -11,7 +11,7 @@ Accedir al contenidor www
 docker exec -ti www bash
 ```
 
-## Accedir des del navegador
+## Accedir des del navegador als serveis
 ```
 localhost:80 -> www
 localhost:8000 -> phpmyadmin
